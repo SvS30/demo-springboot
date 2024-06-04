@@ -55,16 +55,5 @@ En el directorio del proyecto, puede ejecutar:
 ### Contribución
 Siéntete libre de contribuir al proyecto. Puedes abrir issues o pull requests para proponer mejoras o solucionar problemas.
 
-### Licencia
-Una licencia permisiva cuyas condiciones principales requieren la preservación de los avisos de derechos de autor y licencia. Los contribuyentes proporcionan una concesión expresa de derechos de patente. Los trabajos con licencia, las modificaciones y los trabajos más grandes pueden distribuirse bajo diferentes términos y sin código fuente.
-
-| Permisos | Limitaciones | Condiciones |
-| --- | --- | --- |
-| Uso comercial | uso de marca registrada | aviso de licencia y copyright |
-| Modificación | responsabilidad | cambios de estado |
-| Distribución | | |
-| uso de patente | | |
-| Uso privado | | |
-
 ### Contacto
 Si tienes preguntas o necesitas ayuda, puedes contactarme vía [Mail](mailto:salimvzqz@gmail.com).
