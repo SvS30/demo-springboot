@@ -43,6 +43,18 @@ API RESTful utilizando Spring Boot 3.0.0 para gestionar usuarios y los cursos a 
     mvn install
     ```
 
+3. Establecer variables de entorno
+    - Duplicar `.env.example` y renombrar a `.env`
+    - Establecer variables de entorno
+        ```
+        APP_DEBUG=true|false
+        DB_MODE=update|create|create-drop
+        DB_HOST=localhost
+        DB_PORT=3306
+        DB_DATABASE=database
+        DB_USERNAME=root
+        DB_PASSWORD=
+        ```
 ### Scripts
 En el directorio del proyecto, puede ejecutar:
 
