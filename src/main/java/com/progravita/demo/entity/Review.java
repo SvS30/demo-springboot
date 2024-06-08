@@ -1,5 +1,6 @@
 package com.progravita.demo.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,7 +31,7 @@ public class Review {
     private Long id;
 
     @Column(name = "rating", nullable = false, precision = 10, scale = 2)
-    private float rating;
+    private BigDecimal rating;
     @Column(name = "comment", nullable = false, columnDefinition = "TEXT")
     private String comment;
     @ManyToOne(fetch = FetchType.EAGER)

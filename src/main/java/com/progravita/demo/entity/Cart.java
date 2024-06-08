@@ -1,5 +1,6 @@
 package com.progravita.demo.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,11 +31,11 @@ public class Cart {
     private Long id;
 
     @Column(name = "subtotal", nullable = false, precision = 10, scale = 2)
-    private float subtotal;
+    private BigDecimal subtotal;
     @Column(name = "discount", nullable = false, precision = 10, scale = 2)
-    private float discount;
+    private BigDecimal discount;
     @Column(name = "total", nullable = false, precision = 10, scale = 2)
-    private float total;
+    private BigDecimal total;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

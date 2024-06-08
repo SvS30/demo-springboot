@@ -1,5 +1,6 @@
 package com.progravita.demo.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -34,7 +35,7 @@ public class Course {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
-    private Float price;
+    private BigDecimal price;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
