@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.progravita.demo.dto.CourseDTO;
 import com.progravita.demo.entity.Course;
+import com.progravita.demo.exception.BodyInvalid;
+import com.progravita.demo.exception.SourceNotFound;
 import com.progravita.demo.mapper.CourseMapper;
 import com.progravita.demo.repository.ICourseRepository;
 
@@ -16,13 +18,14 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class CourseService {
+
+    private Course verifyExist(Long courseId) {
+        return courseRepository.findById(courseId)
+            .orElseThrow(() -> new SourceNotFound("Course not found with id: " + courseId));
+    }
+
     @Autowired
     private final ICourseRepository courseRepository;
-
-    private boolean verifyExist(Long courseId) {
-        courseRepository.findById(courseId)
-                .orElseThrow(()-> new ResourceNotFoundException("User is not exists with given id: "+userId);
-    }
 
     public List<CourseDTO> getAll() {
         return courseRepository.findAll().stream()
@@ -30,7 +33,7 @@ public class CourseService {
     }
 
     public CourseDTO getById(Long courseId) {
-        Course course = courseRepository.findById(courseId).get();
+        Course course = verifyExist(courseId);
         return CourseMapper.toDto(course);
     }
 
@@ -40,9 +43,18 @@ public class CourseService {
         return CourseMapper.toDto(courseSaved);
     }
 
-    public void update(CourseDTO courseDTO) { return; }
+    public void update(CourseDTO courseDTO) {
+        if (courseDTO.getId() == null) throw new BodyInvalid("Course ID must be provided for update");
+        Course course = verifyExist(courseDTO.getId());
+        course.setTitle(courseDTO.getTitle());
+        course.setDescription(courseDTO.getDescription());
+        course.setPrice(courseDTO.getPrice());
+        course.setCategory(courseDTO.getCategory());
+        courseRepository.save(course);
+    }
 
     public void delete(Long courseId) {
-
+        Course course = verifyExist(courseId);
+        courseRepository.delete(course);
     }
 }
