@@ -38,12 +38,7 @@ API RESTful utilizando Spring Boot 3.0.0 para gestionar usuarios y los cursos a 
     git clone https://github.com/SvS30/demo-springboot.git
     ```
 
-2. Instalar dependencias
-    ```
-    mvn install
-    ```
-
-3. Establecer variables de entorno
+2. Establecer variables de entorno
     - Duplicar `.env.example` y renombrar a `.env`
     - Establecer variables de entorno
         ```
@@ -55,6 +50,10 @@ API RESTful utilizando Spring Boot 3.0.0 para gestionar usuarios y los cursos a 
         DB_USERNAME=root
         DB_PASSWORD=
         ```
+3. Instalar dependencias
+    ```
+    mvn install
+    ```
 ### Scripts
 En el directorio del proyecto, puede ejecutar:
 
