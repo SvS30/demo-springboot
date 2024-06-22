@@ -26,7 +26,7 @@ public class UserMapper {
             userDto.getUsername(),
             userDto.getEmail(),
             userDto.getPassword(),
-            userDto.getCreatedAt(),
+            null, userDto.getCreatedAt(),
             userDto.getUpdatedAt()
         );
     }
