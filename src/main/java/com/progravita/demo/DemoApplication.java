@@ -12,7 +12,7 @@ public class DemoApplication {
 		Dotenv dotenv = Dotenv.configure()
 			.ignoreIfMalformed()
 			.ignoreIfMissing().load();
-		System.out.println("Initializing on " + dotenv.get("APP_DEBUG") + " with jdbc:mysql://" + dotenv.get("DB_HOST") + ":" + dotenv.get("DB_PORT") + "/" + dotenv.get("DB_DATABASE") + "?useSSL=false&serverTimezone=UTC");
+		System.out.println("Initializing on Debug:" + dotenv.get("APP_DEBUG") + " with jdbc:mysql://" + dotenv.get("DB_HOST") + ":" + dotenv.get("DB_PORT") + "/" + dotenv.get("DB_DATABASE") + "?useSSL=false&serverTimezone=UTC");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
